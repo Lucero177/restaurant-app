@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #05070d;
+    color: #f8fafc;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Scrollbar con acento neón */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #05070d; }
+::-webkit-scrollbar-thumb { background: #f1f3f3; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #eb8740; }
+
+@layer components {
+  /* Tarjetas oscuras con borde que brilla al pasar el cursor */
+  .card {
+    @apply bg-[#0c101d] border border-[#1f2b4d] rounded-2xl p-6 transition-all duration-300;
+    box-shadow: 0 10px 35px -5px rgba(0, 0, 0, 0.7);
+  }
+  .card:hover {
+    @apply border-[#ff5500]/60;
+    box-shadow: 0 0 25px -5px rgba(255, 85, 0, 0.3);
+  }
+
+  /* Botones Ultra Llamativos */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-wider transition-all duration-150 active:scale-[0.96] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Botón Naranja Fuego Neón */
+  .btn-primary {
+    @apply bg-gradient-to-r from-[#ff5500] to-[#ff0055] text-white hover:brightness-110;
+    box-shadow: 0 0 25px rgba(255, 85, 0, 0.5);
+  }
+
+  /* Botón Cian Eléctrico */
+  .btn-cyan {
+    @apply bg-[#00f0ff] hover:bg-[#38f4ff] text-black font-extrabold;
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
+  }
+
+  /* Botón Secundario Elegante */
+  .btn-secondary {
+    @apply bg-[#141b30] hover:bg-[#1f2b4d] text-white border border-[#1f2b4d];
+  }
+
+  /* Botón Amarillo Alerta Neón */
+  .btn-warning {
+    @apply bg-[#ffe600] hover:bg-[#fff04d] text-black font-extrabold;
+    box-shadow: 0 0 20px rgba(255, 230, 0, 0.4);
+  }
+
+  /* Inputs de Alto Contraste con foco Cian */
+  .input {
+    @apply bg-[#141b30] border border-[#1f2b4d] rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#00f0ff] focus:ring-2 focus:ring-[#00f0ff]/30 transition-all;
+  }
+
+  /* Badges Neón Saturados */
+  .badge-green {
+    @apply inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-mono font-bold uppercase bg-[#00ff66]/15 text-[#00ff66] border border-[#00ff66]/40;
+    box-shadow: 0 0 12px rgba(0, 255, 102, 0.25);
+  }
+
+  .badge-orange {
+    @apply inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-mono font-bold uppercase bg-[#ff5500]/15 text-[#ff7733] border border-[#ff5500]/40;
+    box-shadow: 0 0 12px rgba(255, 85, 0, 0.25);
+  }
+
+  .badge-cyan {
+    @apply inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-mono font-bold uppercase bg-[#00f0ff]/15 text-[#00f0ff] border border-[#00f0ff]/40;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+  }
+}
